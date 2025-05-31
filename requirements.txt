@@ -4,3 +4,4 @@ openai
 pdfkit
 sendgrid
 jinja2
+weasyprint
