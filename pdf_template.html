@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Valuation Report</title>
+</head>
+<body>
+    <h1>Property Valuation Report</h1>
+    <p><strong>Postcode:</strong> {{ data['postcode'] }}</p>
+    <p><strong>Bedrooms:</strong> {{ data['bedrooms'] }}</p>
+    <p><strong>Bathrooms:</strong> {{ data['bathrooms'] }}</p>
+    <p><strong>Square Footage:</strong> {{ data['sqft'] }}</p>
+    <p><strong>Last Sold Price:</strong> £{{ data['last_sold'] }}</p>
+    <p><strong>Estimated Value:</strong> £{{ data['ai_estimate'] }}</p>
+    <p><strong>Confidence:</strong> {{ data['confidence'] }}%</p>
+    <p><strong>Date:</strong> {{ data['valuation_date'] if 'valuation_date' in data else '' }}</p>
+</body>
+</html>

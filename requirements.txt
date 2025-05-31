@@ -1,0 +1,6 @@
+flask
+requests
+openai
+pdfkit
+sendgrid
+jinja2

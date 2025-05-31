@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Valuation Result</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <h2>Estimated Value: £{{ ai_value }}</h2>
+    <div id="map" style="height: 400px;"></div>
+    <script>
+        var map = L.map('map').setView([{{ latitude }}, {{ longitude }}], 14);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+        L.marker([{{ latitude }}, {{ longitude }}]).addTo(map)
+            .bindPopup('Postcode: {{ postcode }}<br>Estimate: £{{ ai_value }}')
+            .openPopup();
+    </script>
+</body>
+</html>
